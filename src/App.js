@@ -1,25 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import React, {useState} from "react";
+import { Messages } from "./Messages";
+import { Forms } from "./Forms";
 
-function App() {
+const INITIAL_TEXT = "";
+
+export default function App() {
+  const [name, setName] = useState(INITIAL_TEXT);
+
+  const handleChangeName = (e) => {
+    setName(e.target.value);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Forms 
+        name = {name}
+        handleChangeName = {handleChangeName}
+        initialName = { INITIAL_TEXT}
+      />
+
+      <Messages name = {name}/>
     </div>
   );
 }
 
-export default App;
