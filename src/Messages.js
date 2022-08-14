@@ -4,7 +4,6 @@ import React from "react";
 //Function to create paragraphs automatically, using with dangerouslySetInnerHTML.
 //https://iq.js.org/questions/react/how-to-use-innerhtml-in-react
 function createMarkup(msg) {
-    console.log(msg);
     return { __html: msg };
 }
 

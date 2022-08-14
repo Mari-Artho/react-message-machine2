@@ -25,27 +25,18 @@ export default function App() {
   setMessage(text);
   };
 
-//   function createMarkup(msg) {
-//     //console.log(msg);
-//     return { __html: msg };
-// }
-
   const buttonClickMessage = (e) => {
-    //console.log(handleChangeMessage);
-    //setMessage(e.target.value);
-    return (
-     <>
-      {/* <div className="inputMessage" dangerouslySetInnerHTML={createMarkup(message)} />  */}
-      <div>{handleChangeMessage}</div>
-      </>
-    )
+    let form = e.target.parentElement.parentElement;
+    setTitle(form.childNodes[1].childNodes[1].value); // input field 1, input part is inside (the inner child 0 is the label)
+    setName(form.childNodes[2].childNodes[1].value); // input field 2
+    let text = form.childNodes[3].childNodes[1].value; // input field 3
+    setMessage(text);
   }
 
   return (
     <div className="App">
       <Forms className="Forms"
         name = {name}
-        message = {message}
         handleChangeTitle = {handleChangeTitle}
         handleChangeName = {handleChangeName}
         handleChangeMessage = {handleChangeMessage}
