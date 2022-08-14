@@ -4,7 +4,8 @@ import React from "react";
 //Function to create paragraphs automatically, using with dangerouslySetInnerHTML.
 //https://iq.js.org/questions/react/how-to-use-innerhtml-in-react
 function createMarkup(msg) {
-    return { __html: msg };
+    let html = msg.replace(/\n/g, '<br>')
+    return { __html: html };
 }
 
 export const Messages =({name, title, message}) => {
