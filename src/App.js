@@ -2,6 +2,7 @@ import './App.css';
 import React, {useState} from "react";
 import { Messages } from "./Messages";
 import { Forms } from "./Forms";
+//eslint-disable-next-line
 var parse = require('html-react-parser');
 
 const INITIAL_TEXT = "";
@@ -20,17 +21,35 @@ export default function App() {
   };
 
   const handleChangeMessage = (e) => {
-    let text = e.target.value.replace(/\n/g, '<br>');
-    setMessage(React.createElement('p', {}, text));
+  let text = e.target.value.replace(/\n/g, '<br>');
+  setMessage(text);
   };
+
+//   function createMarkup(msg) {
+//     //console.log(msg);
+//     return { __html: msg };
+// }
+
+  const buttonClickMessage = (e) => {
+    //console.log(handleChangeMessage);
+    //setMessage(e.target.value);
+    return (
+     <>
+      {/* <div className="inputMessage" dangerouslySetInnerHTML={createMarkup(message)} />  */}
+      <div>{handleChangeMessage}</div>
+      </>
+    )
+  }
 
   return (
     <div className="App">
       <Forms className="Forms"
         name = {name}
+        message = {message}
         handleChangeTitle = {handleChangeTitle}
         handleChangeName = {handleChangeName}
         handleChangeMessage = {handleChangeMessage}
+        buttonClickMessage = {buttonClickMessage}
       />
 
       <Messages className="Messages"

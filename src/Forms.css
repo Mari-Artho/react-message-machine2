@@ -1,0 +1,32 @@
+.Forms {
+    flex-direction: column;
+    width: 100%;
+}
+
+label {
+    display: block;
+    float: left;
+    width:100px;
+}
+
+.inputField {
+    margin: 20px;
+}
+
+textarea {
+    width: 360px;
+    height: 400px;
+}
+
+.button {
+    text-align: center;
+    margin: 15px 0;
+}
+
+/* 480px, smart phone */
+@media screen and (max-width: 480px) {
+    textarea {
+        width: 280px;
+        height: 350px;
+    }
+  }

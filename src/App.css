@@ -18,5 +18,12 @@
   padding: 30px;
 }
 
+/* 480px, smart phone */
+@media screen and (max-width: 480px) {
+  .App {
+    flex-direction: column;
+  }
+}
+
 
 
