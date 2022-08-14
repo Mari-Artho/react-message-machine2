@@ -2,6 +2,7 @@ import './App.css';
 import React, {useState} from "react";
 import { Messages } from "./Messages";
 import { Forms } from "./Forms";
+var parse = require('html-react-parser');
 
 const INITIAL_TEXT = "";
 
@@ -19,19 +20,20 @@ export default function App() {
   };
 
   const handleChangeMessage = (e) => {
-    setMessage(e.target.value);
+    let text = e.target.value.replace(/\n/g, '<br>');
+    setMessage(React.createElement('p', {}, text));
   };
 
   return (
     <div className="App">
-      <Forms 
+      <Forms className="Forms"
         name = {name}
         handleChangeTitle = {handleChangeTitle}
         handleChangeName = {handleChangeName}
         handleChangeMessage = {handleChangeMessage}
       />
 
-      <Messages 
+      <Messages className="Messages"
         title = {title}
         name = {name}
         message = {message}

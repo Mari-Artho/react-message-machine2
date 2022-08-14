@@ -1,22 +1,22 @@
+import './Forms.css';
+import React from "react";
+
 export const Forms = ({ name, handleChangeTitle, handleChangeName, handleChangeMessage}) => {
     return (
-        <div className="App">
-            <h1>これは Forms.js コンポーネントです。</h1>
-            <p> Hello, {name} </p>
-            <div>
-                <label>TITLE:
-                <input type="text" onChange={handleChangeTitle}></input>
-                </label>
+        <div className="Forms">
+            <p className='name'> Hello, {name} </p>
+            <div className='inputField'>
+                <label>NAME:</label>
+                <input type="text" onChange={handleChangeName} maxlength="15"></input>
             </div>
-            <div>
-                <label>NAME:
-                <input type="text" onChange={handleChangeName}></input>
-                </label>
+            <div className='inputField'>
+                <label>TITLE: </label>
+                <input type="text" onChange={handleChangeTitle} maxlength="20"></input>
             </div>
-            <div>
-                <label>MESSAGE:
+            <div className='inputField'>
+                <label>MESSAGE: </label>
                 <textarea type="text" onChange={handleChangeMessage}></textarea>
-            </label>
+           
             </div>
         </div>
     );
